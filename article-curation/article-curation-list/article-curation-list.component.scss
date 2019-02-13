@@ -1,0 +1,24 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/mixins';
+
+.users-card-body-create {
+    display: block;
+
+    .users-card-body-form-submit {
+        @include blue-submit();
+        margin-bottom: 20px;
+    }
+}
+
+nb-card {
+    @include view-card(20px);
+}
+
+.btn-wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .users-card-body-create {
+    margin-right: 10px;
+  }
+}

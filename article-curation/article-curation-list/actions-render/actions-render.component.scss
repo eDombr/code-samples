@@ -1,0 +1,14 @@
+@import '../../../../../assets/scss/variables';
+@import '../../../../../assets/scss/mixins';
+
+.articles-action-button {
+  @include flex(center);
+
+  button {
+    @include blue-submit();
+    margin-bottom: 15px;
+
+    line-height: 0.25;
+    font-size: 0.8rem;
+  }
+}

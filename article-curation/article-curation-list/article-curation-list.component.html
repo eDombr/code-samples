@@ -1,0 +1,22 @@
+<nb-card class="users-card">
+  <nb-card-header>FEEDS ARRGEGATION LIST</nb-card-header>
+  <nb-card-body class="users-card-body">
+      <div class="btn-wrapper">
+        <div class="users-card-body-create" *ngxPermission="permissions.articles.add">
+          <button class="btn users-card-body-form-submit" routerLink="/articles/create">Add new article</button>
+        </div>
+        <div class="users-card-body-create" *ngxPermission="permissions.aggregator.bulkDeleteFeedItem">
+          <button class="btn users-card-body-form-submit" (click)="bulkDelete()">Delete All Selected</button>
+        </div>
+      </div>
+      <div class="users-card-body-table">
+          <ng2-smart-table
+                  [settings]="settings"
+                  [source]="source"
+                  (delete)="handleArticleDelete($event)"
+                  (userRowSelect)="selectFeeds($event)">
+          </ng2-smart-table>
+          <ngx-notifications></ngx-notifications>
+      </div>
+  </nb-card-body>
+</nb-card>
